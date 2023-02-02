@@ -434,7 +434,7 @@ pub(super) struct ChannelJoined {
     pub broadcasts: broadcast::Receiver<Broadcast>,
 }
 
-enum Command {
+pub enum Command {
     Subscribe(Event, EventHandler, oneshot::Sender<SubscriptionRef>),
     Unsubscribe(Event, SubscriptionRef),
     UnsubscribeAll(Event),
