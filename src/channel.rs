@@ -181,19 +181,19 @@ pub type EventHandler = Box<dyn Fn(Arc<Channel>, &Payload) + Send + Sync + 'stat
 ///
 pub struct Channel {
     /// The unique id for this channel. This is always the same for a channel of a given `topic`
-    id: ChannelId,
+    pub id: ChannelId,
     /// The unique id of this channel's session, once joined to the topic
-    join_ref: u32,
+    pub join_ref: u32,
     /// The channel status
-    status: Arc<AtomicU32>,
+    pub status: Arc<AtomicU32>,
     /// The name of the channel topic this handle is joined to
-    topic: Arc<String>,
+    pub topic: Arc<String>,
     /// Used to send messages to the socket
-    client: mpsc::Sender<ClientCommand>,
+    pub client: mpsc::Sender<ClientCommand>,
     /// Used to issue commands to the channel listener
-    listener: mpsc::Sender<Command>,
+    pub listener: mpsc::Sender<Command>,
     /// Counter for unique message reference identifiers
-    next_reference_id: Arc<AtomicU32>,
+    pub next_reference_id: Arc<AtomicU32>,
 }
 impl Channel {
     pub(crate) fn new(
