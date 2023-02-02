@@ -272,7 +272,7 @@ impl Client {
 
 /// This enum encodes the various commands that can be used to control the socket listener
 #[doc(hidden)]
-pub(super) enum ClientCommand {
+pub enum ClientCommand {
     /// Tells the client to join `channel` to its desired topic, and then:
     ///
     /// * If joining was successful, notify the channel listener via `on_join`, and then tell
