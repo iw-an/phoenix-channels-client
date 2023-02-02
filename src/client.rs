@@ -292,7 +292,7 @@ pub enum ClientCommand {
 
 /// Represents a command to the socket listener to join a channel
 #[doc(hidden)]
-pub(super) struct Join {
+pub struct Join {
     /// The instant at which this join was created
     instant: Instant,
     /// The channel being joined
@@ -313,7 +313,7 @@ impl Join {
 
 /// Represents a command to the socket listener to leave a channel
 #[doc(hidden)]
-pub(super) struct Leave {
+pub struct Leave {
     pub topic: String,
     pub channel_ref: ChannelRef,
 }
